@@ -13,5 +13,13 @@ module.exports = {
     static: './dist',
     hot: true,
 },
+module: {
+  rules: [
+    {
+      test: /\.css$/i,
+      use: ["style-loader", "css-loader"],
+    },
+  ],
+},
   plugins: [new HtmlWebpackPlugin(), new webpack.HotModuleReplacementPlugin()]
 };
