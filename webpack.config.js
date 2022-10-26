@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
@@ -20,6 +21,14 @@ module: {
       use: ["style-loader", "css-loader"],
     },
   ],
+},resolve: {
 },
-  plugins: [new HtmlWebpackPlugin(), new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyPlugin({
+    patterns: [
+      { from: path.resolve(__dirname, "node_modules", "luxembourg-geoportail", "assets"), to: "assets" }
+    ],
+  })]
 };
