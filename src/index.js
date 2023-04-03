@@ -1,17 +1,16 @@
-import {mapService, MapService, Dropdown} from "../node_modules/luxembourg-geoportail/module.esm";
-// import "luxgeo/module/module.css";
+// import Catalog from "../node_modules/luxembourg-geoportail/src/components/catalog/catalog-tree.vue";
 
-// alert("mapService");
+// import DropdownList from "../node_modules/luxembourg-geoportail/src/components/common/dropdown-list.vue";
 
-console.log(mapService);
-console.log(MapService);
-console.log(Dropdown);
+// import { defineCustomElement } from 'vue';
 
-const luxDropdown = document.createElement("lux-dropdown");
-luxDropdown.options = [{ label: "toto", value: "toto" }, { label: "toto1", value: "toto1" }];
-document.getElementsByTagName('body')[0].appendChild(luxDropdown);
+// const DropdownListElement = defineCustomElement(DropdownList)
+// customElements.define('dropdown-list', DropdownListElement)
+// DropdownListElement.options = [{ label: "toto", value: "toto" }, { label: "toto1", value: "toto1" }];
 
-const luxCatalog = document.createElement("lux-catalog");
-// luxDropdown.options = [{ label: "toto", value: "toto" }, { label: "toto1", value: "toto1" }];
-document.getElementsByTagName('body')[0].appendChild(luxCatalog);
-luxCatalog.addEventListener('parent-toggle', (e) => {alert(e); console.log(e)})
+import MyButton from "../node_modules/luxembourg-geoportail/src/MyButton.vue";
+
+import { defineCustomElement } from 'vue';
+
+const MyButtonElement = defineCustomElement(MyButton)
+customElements.define('my-button', MyButtonElement)
