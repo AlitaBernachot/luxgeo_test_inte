@@ -18,44 +18,46 @@ const vuejsRule = {
 // };
 
 module.exports = {
-    mode: 'development',
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    sourceMapFilename: "[name].js.map"
   },
+  devtool: "source-map",
   devServer: {
     static: './dist',
     hot: true,
-},
-module: {
-  rules: [
-    {
-      test: /\.css$/i,
-      use: ['style-loader', 'css-loader', 'postcss-loader'],
-    },
-    {
-      test: /\.vue$/,
-      loader: 'vue-loader',
-      options: {
-        hotReload: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
-    },
-    {
-      test: /\.(tsx?)$/,
-      loader: 'ts-loader',
-      options: {
-        appendTsSuffixTo: [/\.vue$/],
-      }
-    },
-  ],
-},resolve: {
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          hotReload: false,
+        },
+      },
+      {
+        test: /\.(tsx?)$/,
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
+      },
+    ],
+  }, resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       // 'vue$': 'vue/dist/vue.runtime.esm-browser.prod.js'
       'vue$': 'vue/dist/vue.runtime.esm-browser.js'
     }
-},
+  },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
