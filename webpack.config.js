@@ -23,7 +23,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    sourceMapFilename: "[name].js.map"
+    // sourceMapFilename: "[name].js.map"
   },
   devtool: "source-map",
   devServer: {
@@ -55,7 +55,7 @@ module.exports = {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       // 'vue$': 'vue/dist/vue.runtime.esm-browser.prod.js'
-      'vue$': 'vue/dist/vue.runtime.esm-browser.js'
+      'vue$': 'vue/dist/vue.esm-bundler.js'
     }
   },
   plugins: [
