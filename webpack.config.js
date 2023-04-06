@@ -66,10 +66,10 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: path.resolve(__dirname, "node_modules", "luxembourg-geoportail", "assets"), to: "assets" }
-    //   ],
-    //   })
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "node_modules", "luxembourg-geoportail", "bundle", "assets"), to: "assets" }
+      ],
+      })
   ]
 };

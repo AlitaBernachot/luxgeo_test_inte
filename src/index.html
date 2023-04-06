@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-    <div id="app"></div>
+    <head>
+        <link rel="stylesheet" href="assets/style.css">
+        <title>POC - Test vuejs as web components</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <h1>Test vuejs as web components</h1>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+        <div style="display: flex;">
+            <div style="margin-right: 100px;">
+                <h2>Catalogue</h2>
+                <catalog-tree></catalog-tree>
+            </div>
+            <div>
+                <h2>Layer Manager</h2>
+                <layer-manager></layer-manager>
+            </div>
+        </div>
 
-<catalog-tree></catalog-tree>
-<dropdown-list></dropdown-list>
-
-<my-button></my-button>
-
-</body>
+        <dropdown-list></dropdown-list>
+        <my-button></my-button>
+    </body>
 </html>

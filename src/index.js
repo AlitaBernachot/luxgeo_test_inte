@@ -2,7 +2,7 @@
 
 // import DropdownList from "../node_modules/luxembourg-geoportail/src/components/common/dropdown-list.vue";
 // import * as css from "../node_modules/luxembourg-geoportail/bundle/assets/style-85969ff6.css";
-import { app, i18next, createElementInstance, createPinia, VueDOMPurifyHTML, backend, I18NextVue, DropdownList, CatalogTree } from "../node_modules/luxembourg-geoportail/bundle/my-lib.mjs";
+import { app, i18next, createElementInstance, createPinia, VueDOMPurifyHTML, backend, I18NextVue, DropdownList, LayerManager, CatalogTree } from "../node_modules/luxembourg-geoportail/bundle/my-lib.mjs";
 
 
 
@@ -33,6 +33,9 @@ customElements.define('dropdown-list', DropdownListElement)
 
 const CatalogElement = createElementInstance(CatalogTree)
 customElements.define('catalog-tree', CatalogElement)
+
+const LayerManagerElement = createElementInstance(LayerManager)
+customElements.define('layer-manager', LayerManagerElement)
 
 // console.log(DropdownListElement.options)
 
